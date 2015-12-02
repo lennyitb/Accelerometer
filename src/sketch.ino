@@ -55,7 +55,7 @@ void loop()
 	 * Divide the shifted sensor reading by scale to get acceleration in Gs. */
 	float scale = 102.3;
 
-	Added by LHPIV as part of button interface
+	/* Added by LHPIV as part of button interface */
 		int i; for (i=1;i<=50;i++)
 		{
 			if (digitalRead(8)==LOW)
