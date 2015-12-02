@@ -55,33 +55,33 @@ void loop()
 	 * Divide the shifted sensor reading by scale to get acceleration in Gs. */
 	float scale = 102.3;
 
-	/* Added by LHPIV as part of button interface */
-	/* int i; for (i=1;i<=50;i++) */
-	/* { */
-	/* 	if (digitalRead(8)==LOW) */
-	/* 	/1* Pin 8 is configured as INPUT_PULLUP, */
-	/* 	 *  Pressing the button pulls 8 from 5V to GND */
-	/* 	 *  Therefore, logic is inverted. LOW now means */
-	/* 	 *  the button IS pressed, and HIGH means it is */
-	/* 	 *  not. -LHYIV*/
-	/* 	{ */
-	/* 		if (serialon==0) */
-	/* 		{ */
-	/* 			serialon=1; */
-	/* 		} else { */
-	/* 			serialon=0; */
-	/* 		} */
-	/* 		delay(1000); */
-	/* 	} */
-	/* 	delay(1); */
-	/* } */
-	/* if (serialon==1) */
-	/* { */
-	/* 	Serial.print(((float)x - zero_G)/scale); */
-	/* 	Serial.print("\t"); */
-	/* 	Serial.print(((float)y - zero_G)/scale); */
-	/* 	Serial.print("\t"); */
-	/* 	Serial.print(((float)z - zero_G)/scale); */
-	/* 	Serial.print("\n"); */
-	/* } */
+	Added by LHPIV as part of button interface
+		int i; for (i=1;i<=50;i++)
+		{
+			if (digitalRead(8)==LOW)
+				/* Pin 8 is configured as INPUT_PULLUP,
+				 *  Pressing the button pulls 8 from 5V to GND
+				 *  Therefore, logic is inverted. LOW now means
+				 *  the button IS pressed, and HIGH means it is
+				 *  not. -LHYIV*/
+			{
+				if (serialon==0)
+				{
+					serialon=1;
+				} else {
+					serialon=0;
+				}
+				delay(1000);
+			}
+			delay(1);
+		}
+	if (serialon==1)
+	{
+		Serial.print(((float)x - zero_G)/scale);
+		Serial.print("\t");
+		Serial.print(((float)y - zero_G)/scale);
+		Serial.print("\t");
+		Serial.print(((float)z - zero_G)/scale);
+		Serial.print("\n");
+	}
 }
